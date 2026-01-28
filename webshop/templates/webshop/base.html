@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>{% block page_title %}Webshop{% endblock %}</title>
+
+    <link href="{% static 'dist/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+{% include 'webshop/navbar.html' %}
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    {% block content %}
+
+
+    {% endblock %}
+</main>
+
+<footer class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-gray-600">
+        &copy; {{ current_year|default:2026 }} Webshop. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DjangoCommandHistory">
+    <option name="commandArguments">
+      <map>
+        <entry key="dbshell" value="" />
+      </map>
+    </option>
+    <option name="recentCommands">
+      <list>
+        <option value="dbshell" />
+      </list>
+    </option>
+  </component>
+</project>

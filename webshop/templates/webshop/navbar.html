@@ -1,0 +1,248 @@
+<!--<div class="top-0 py-3 w-full bg-gray-900 z-50 shadow-lg">-->
+<!--    <nav class="max-w-6xl mx-auto px-5">-->
+<!--        <div class="flex items-center justify-between">-->
+
+<!--            &lt;!&ndash; Logo &ndash;&gt;-->
+<!--            <div class="flex items-center space-x-2">-->
+<!--                <h2 class="text-white font-bold text-2xl tracking-wide">ElectroShop</h2>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Menu &ndash;&gt;-->
+<!--            <ul class="flex flex-1 justify-center gap-10 text-base font-semibold text-gray-300 mx-10">-->
+
+<!--                &lt;!&ndash; Home &ndash;&gt;-->
+<!--                <li>-->
+<!--                    <a class="relative px-2 py-1 text-white hover:text-cyan-400 transition-colors duration-200-->
+<!--                              before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5-->
+<!--                              before:bg-gradient-to-r before:from-cyan-400 before:to-purple-500-->
+<!--                              before:transition-all before:duration-300 hover:before:w-full"-->
+<!--                       href="#">-->
+<!--                        Home-->
+<!--                    </a>-->
+<!--                </li>-->
+
+<!--                &lt;!&ndash; Shop with Dropdown &ndash;&gt;-->
+<!--                <li class="relative group">-->
+
+<!--                    <a class="relative px-2 py-1 text-white hover:text-cyan-400 transition-colors duration-200-->
+<!--                              before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5-->
+<!--                              before:bg-gradient-to-r before:from-cyan-400 before:to-purple-500-->
+<!--                              before:transition-all before:duration-300 hover:before:w-full"-->
+<!--                    >-->
+<!--                        Shop-->
+<!--                    </a>-->
+
+<!--                    &lt;!&ndash; Hover Gap Fix &ndash;&gt;-->
+<!--                    <div class="absolute left-0 top-full h-3 w-full"></div>-->
+
+<!--                    &lt;!&ndash; Dropdown &ndash;&gt;-->
+<!--                    <ul class="absolute left-1/2 -translate-x-1/2 mt-3 w-44-->
+<!--                               bg-gray-800 rounded-lg shadow-xl border border-gray-700-->
+<!--                               opacity-0 invisible group-hover:opacity-100 group-hover:visible-->
+<!--                               transition-all duration-200 z-50">-->
+
+
+<!--                        {% for category in categories %}-->
+
+
+<!--                        <li>-->
+<!--                            <a class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 rounded-t-lg"-->
+<!--                               href="{% url 'category_products' category.id %}">-->
+<!--                                {{ category.name }}-->
+<!--                            </a>-->
+<!--                        </li>-->
+
+<!--                        {% endfor %}-->
+<!--                        &lt;!&ndash;                        <li>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <a class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-cyan-400"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                               href="">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                Home Appliances&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            </a>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        </li>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        <li>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <a class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-cyan-400"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                               href="">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                Phone & Accessories&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            </a>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        </li>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                      &ndash;&gt;-->
+<!--                    </ul>-->
+<!--                </li>-->
+
+<!--                &lt;!&ndash; Admin &ndash;&gt;-->
+<!--                <li>-->
+<!--                    <a class="relative px-2 py-1 text-white hover:text-cyan-400 transition-colors duration-200-->
+<!--                              before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5-->
+<!--                              before:bg-gradient-to-r before:from-cyan-400 before:to-purple-500-->
+<!--                              before:transition-all before:duration-300 hover:before:w-full"-->
+<!--                       href="{% url 'manage_products' %}">-->
+<!--                        Admin-->
+<!--                    </a>-->
+<!--                </li>-->
+
+<!--                &lt;!&ndash; Contact &ndash;&gt;-->
+<!--                <li>-->
+<!--                    <a class="relative px-2 py-1 text-white hover:text-cyan-400 transition-colors duration-200-->
+<!--                              before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5-->
+<!--                              before:bg-gradient-to-r before:from-cyan-400 before:to-purple-500-->
+<!--                              before:transition-all before:duration-300 hover:before:w-full"-->
+<!--                       href="#">-->
+<!--                        Contact-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--            </ul>-->
+
+<!--            &lt;!&ndash; Auth Buttons &ndash;&gt;-->
+
+
+<!--            {% if request.user.is_authenticated %}-->
+
+<!--            <a href="{% url 'logout' %}">-->
+<!--                <button class="px-6 py-2.5 font-semibold text-white rounded-md-->
+<!--                               bg-red-900-->
+<!--                               shadow-lg hover:scale-105 hover:brightness-110-->
+<!--                               transition transform duration-200">-->
+<!--                    Logout-->
+<!--                </button>-->
+<!--            </a>-->
+<!--            {% else %}-->
+<!--            <a href="{% url 'login' %}">-->
+<!--                <button class="px-6 py-2.5 font-semibold text-white rounded-md-->
+<!--                               bg-gradient-to-r from-cyan-400 to-purple-500-->
+<!--                               shadow-lg hover:scale-105 hover:brightness-110-->
+<!--                               transition transform duration-200">-->
+<!--                    Login / Sign up-->
+<!--                </button>-->
+<!--            </a>-->
+
+<!--            {% endif %}-->
+
+<!--        </div>-->
+
+<!--    </nav>-->
+<!--</div>-->
+
+
+<div class="top-0 py-3 w-full bg-gray-900 z-50 shadow-lg">
+    <nav class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+            <h2 class="text-white font-bold text-2xl tracking-wide">ElectroShop</h2>
+        </div>
+
+        <!-- Menu -->
+        <ul class="hidden md:flex flex-1 justify-center gap-10 text-base font-semibold text-gray-300 mx-10">
+
+            <!-- Home -->
+            <li>
+                <a class="relative px-2 py-1 text-white hover:text-cyan-400 transition-colors duration-200
+                          before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5
+                          before:bg-gradient-to-r before:from-cyan-400 before:to-purple-500
+                          before:transition-all before:duration-300 hover:before:w-full"
+                   href="#">
+                    Home
+                </a>
+            </li>
+
+            <!-- Shop Dropdown -->
+            <li class="relative group">
+                <a class="relative px-2 py-1 text-white hover:text-cyan-400 transition-colors duration-200
+                          before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5
+                          before:bg-gradient-to-r before:from-cyan-400 before:to-purple-500
+                          before:transition-all before:duration-300 hover:before:w-full">
+                    Shop
+                </a>
+
+                <div class="absolute left-0 top-full h-3 w-full"></div>
+
+                <ul class="absolute left-1/2 -translate-x-1/2 mt-3 w-44
+                           bg-gray-800 rounded-lg shadow-xl border border-gray-700
+                           opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                           transition-all duration-200 z-50">
+                    {% for category in categories %}
+                    <li>
+                        <a class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 rounded-t-lg"
+                           href="{% url 'category_products' category.id %}">
+                            {{ category.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+
+            <!-- Admin -->
+            <li>
+                <a class="relative px-2 py-1 text-white hover:text-cyan-400 transition-colors duration-200
+                          before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5
+                          before:bg-gradient-to-r before:from-cyan-400 before:to-purple-500
+                          before:transition-all before:duration-300 hover:before:w-full"
+                   href="{% url 'manage_products' %}">
+                    Admin
+                </a>
+            </li>
+
+            <!-- Contact -->
+            <li>
+                <a class="relative px-2 py-1 text-white hover:text-cyan-400 transition-colors duration-200
+                          before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5
+                          before:bg-gradient-to-r before:from-cyan-400 before:to-purple-500
+                          before:transition-all before:duration-300 hover:before:w-full"
+                   href="#">
+                    Contact
+                </a>
+            </li>
+        </ul>
+
+        <!-- Right Side: Cart, Wishlist, Auth -->
+        <div class="flex items-center space-x-4">
+
+            <!-- Wishlist -->
+            <a class="relative text-white hover:text-cyan-400 transition-colors duration-200"
+               href="">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor"
+                     stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21l-7.682-7.682a4.5 4.5 0 010-6.364z"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+                <span class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1">
+                    {{ wishlist_count }}
+                </span>
+            </a>
+
+            <!-- Cart -->
+            <a class="relative text-white hover:text-cyan-400 transition-colors duration-200" href="">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor"
+                     stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.707a1 1 0 00.894 1.293H17m-10 0a1 1 0 110 2 1 1 0 010-2zm10 0a1 1 0 110 2 1 1 0 010-2z"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+                <span class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1">
+                    {{ cart_count }}
+                </span>
+            </a>
+
+            <!-- Auth Buttons -->
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'logout' %}">
+                <button class="px-6 py-2.5 font-semibold text-white rounded-md
+                               bg-red-900 shadow-lg hover:scale-105 hover:brightness-110
+                               transition transform duration-200">
+                    Logout
+                </button>
+            </a>
+            {% else %}
+            <a href="{% url 'login' %}">
+                <button class="px-6 py-2.5 font-semibold text-white rounded-md
+                               bg-[#800020] shadow-lg hover:scale-105 hover:brightness-110
+                               transition transform duration-200">
+                    Login / Sign up
+                </button>
+            </a>
+            {% endif %}
+        </div>
+
+    </nav>
+</div>

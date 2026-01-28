@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+
+
+Manage Users
+{% endblock %}
+
+
+{% block content %}
+
+
+{% if items %}
+{% for item in items %}
+<p>{{ item.product.name }}</p>
+{% endfor %}
+{% else %}
+<p>Your wishlist is empty.</p>
+{% endif %}
+
+
+{% endblock %}

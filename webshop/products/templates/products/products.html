@@ -1,0 +1,156 @@
+{% extends "webshop/base.html" %}
+
+{% load static %}
+{% block content %}
+
+<h1>
+    all products
+</h1>
+
+<!--<div class="flex flex-wrap justify-start gap-4">-->
+
+<!--    {% for product in products %}-->
+<!--    <div class="w-80 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 p-4">-->
+
+<!--        &lt;!&ndash; Product Image &ndash;&gt;-->
+<!--        <div class="rounded-xl overflow-hidden bg-gray-50 shadow-inner">-->
+<!--            <img-->
+<!--                    alt="Product Image"-->
+<!--                    class="object-contain w-full h-[220px] p-2 transition-transform duration-300 hover:scale-105"-->
+<!--                    src="{{product.product_image.url}}"-->
+<!--            />-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Product Details &ndash;&gt;-->
+<!--        <div class="mt-4">-->
+<!--            <h3 class="text-gray-800 font-semibold text-base leading-tight hover:text-blue-600 transition">-->
+<!--                {{ product.name }}-->
+<!--            </h3>-->
+
+<!--            <p class="uppercase text-green-600 text-xs font-medium mt-1">{{ product.brand }}</p>-->
+
+<!--            &lt;!&ndash; Pricing &ndash;&gt;-->
+<!--            <div class="flex items-end justify-between mt-3">-->
+<!--                <div class="flex items-baseline space-x-2">-->
+<!--                    <span class="text-blue-600 text-xl font-semibold">€{{ product.price}}</span>-->
+
+<!--                </div>-->
+
+<!--                {% if product.is_sold_out %}-->
+<!--                <p></p>-->
+
+<!--                {% else %}-->
+<!--                <div class="flex items-baseline space-x-2">-->
+<!--                    <span class="text-blue-600 text-sm font-semibold">{{ product.stock}} in stock</span>-->
+
+<!--                </div>-->
+<!--                {% endif %}-->
+
+<!--            </div>-->
+
+
+<!--            &lt;!&ndash; Buttons &ndash;&gt;-->
+
+
+<!--            <div class="mt-4 space-y-2">-->
+
+<!--                {% if product.is_sold_out %}-->
+
+<!--                <span class="text-red-500  font-bold shadow-lg shadow-gray-400 text-2xl"> Sold Out </span>-->
+
+
+<!--                {% else %}-->
+
+<!--                <button-->
+<!--                        class="w-full py-2 bg-gray-900 hover:bg-red-900 text-white font-medium rounded-xl shadow-md transition">-->
+<!--                    Add to Cart-->
+<!--                </button>-->
+
+<!--                <button-->
+<!--                        class="w-full py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium rounded-xl shadow-sm transition">-->
+<!--                    Add to Wishlist-->
+<!--                </button>-->
+
+<!--                {% endif %}-->
+
+
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+
+<!--</div>-->
+
+<div class="flex flex-wrap justify-start gap-6">
+
+    {% for product in products %}
+    <div class="w-72 bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+
+        <!-- IMAGE -->
+        <div class="bg-gray-50 border-b border-gray-100 overflow-hidden">
+            <img alt="{{ product.name }}"
+                 class="w-full h-[200px] object-contain p-4 transition-transform duration-500 hover:scale-110"
+                 src="{{ product.product_image.url }}"/>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="px-4 py-4 flex flex-col flex-grow">
+
+            <!-- NAME -->
+            <h3 class="text-gray-900 font-semibold text-lg leading-tight line-clamp-2 h-12">
+                {{ product.name }}
+            </h3>
+
+            <!-- BRAND -->
+            <p class="text-sm text-gray-500 uppercase tracking-wide mt-1 line-clamp-1 h-5">
+                {{ product.brand }}
+            </p>
+
+            <!-- PRICE & STOCK -->
+            <div class="flex items-center justify-between mt-4 h-6">
+                <span class="text-xl font-bold text-gray-900">
+                    €{{ product.price }}
+                </span>
+
+                {% if product.is_sold_out %}
+                <span class="text-sm font-semibold text-red-500">
+                    Sold Out
+                </span>
+                {% else %}
+                <span class="text-sm font-medium text-green-600">
+                    {{ product.stock }} in stock
+                </span>
+                {% endif %}
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="mt-auto pt-4">
+
+                {% if product.is_sold_out %}
+                <span class="block w-full text-center bg-red-100 text-red-600 py-2 rounded-xl font-semibold">
+                        SOLD OUT
+                    </span>
+                {% else %}
+                <button
+                        class="w-full py-2.5 bg-gray-900 text-white font-medium rounded-xl shadow-md hover:bg-black transition">
+                    Add to Cart
+                </button>
+
+                <button
+                        class="mt-2 w-full py-2 bg-gray-200 text-gray-800 border border-gray-300 font-medium rounded-xl hover:bg-gray-300 transition">
+                    Add to Wishlist
+                </button>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}
+
+

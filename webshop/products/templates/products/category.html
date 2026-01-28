@@ -1,0 +1,46 @@
+{% extends 'webshop/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1 class="text-4xl font-extrabold mb-12 text-gray-100 tracking-tight text-center">
+    Product Categories
+</h1>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    {% for category in categories %}
+    <div
+            class="group relative bg-gray-900 rounded-3xl border border-gray-800
+               shadow-lg hover:shadow-[0_0_25px_rgba(59,130,246,0.7)]
+               transition-all duration-300 transform hover:-translate-y-2 cursor-pointer p-8 text-center overflow-hidden">
+
+        <!-- Neon top accent bar -->
+        <div class="absolute top-0 left-0 w-full h-1 rounded-t-3xl"
+             style="background: linear-gradient(90deg, #0ff, #a855f7, #f43f5e);"></div>
+
+        <!-- Neon hover glow overlay -->
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-300"
+             style="background: linear-gradient(135deg, rgba(0,255,255,0.15), rgba(168,85,247,0.15), rgba(244,63,94,0.15)); border-radius: 1rem;"></div>
+
+        <!-- Category name -->
+        <h2 class="relative text-xl font-bold text-white tracking-wide z-10">
+            {{ category.name }}
+        </h2>
+
+        <!-- Animated neon underline -->
+        <div class="relative mx-auto mt-4 h-1 w-0 rounded-full transition-all duration-300 group-hover:w-20"
+             style="background: linear-gradient(90deg, #0ff, #a855f7, #f43f5e); z-index: 10;"></div>
+
+        <!-- CTA -->
+        <div class="relative mt-6 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+             style="color: #0ff; text-shadow: 0 0 8px #0ff, 0 0 12px #a855f7, 0 0 16px #f43f5e;">
+            Shop Now →
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-gray-400 col-span-full text-center text-lg">
+        No categories available.
+    </p>
+    {% endfor %}
+</div>
+
+{% endblock %}

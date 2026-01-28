@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+
+
+Manage Users
+{% endblock %}
+
+
+{% block content %}
+
+{% for user in users %}
+
+{{ user.name }}
+
+<a href="{% url 'customer_wishlist' user.id %}"> wishlist</a>
+
+{% endfor %}
+
+
+{% endblock %}
