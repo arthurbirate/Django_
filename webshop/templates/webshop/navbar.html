@@ -171,16 +171,35 @@
                 </ul>
             </li>
 
-            <!-- Admin -->
-            <li>
+            <!-- Admin dropdown -->
+
+            {% if request.user.is_authenticated %}
+            <li class="relative group">
                 <a class="relative px-2 py-1 text-white hover:text-cyan-400 transition-colors duration-200
                           before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5
                           before:bg-gradient-to-r before:from-cyan-400 before:to-purple-500
-                          before:transition-all before:duration-300 hover:before:w-full"
-                   href="{% url 'manage_products' %}">
+                          before:transition-all before:duration-300 hover:before:w-full">
                     Admin
                 </a>
+
+                <div class="absolute left-0 top-full h-3 w-full"></div>
+
+                <ul class="absolute left-1/2 -translate-x-1/2 mt-3 w-44
+                           bg-gray-800 rounded-lg shadow-xl border border-gray-700
+                           opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                           transition-all duration-200 z-50">
+
+                    <li>
+                        <a class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 rounded-t-lg"
+                           href="{% url 'manage_products' %}">
+                            Manage Products
+                        </a>
+                    </li>
+
+                </ul>
             </li>
+            {% endif %}
+
 
             <!-- Contact -->
             <li>
@@ -212,7 +231,8 @@
             </a>
 
             <!-- Cart -->
-            <a class="relative text-white hover:text-cyan-400 transition-colors duration-200" href="">
+            <a class="relative text-white hover:text-cyan-400 transition-colors duration-200"
+               href="{% url 'CartItems' %}">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor"
                      stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.707a1 1 0 00.894 1.293H17m-10 0a1 1 0 110 2 1 1 0 010-2zm10 0a1 1 0 110 2 1 1 0 010-2z"

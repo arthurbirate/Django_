@@ -25,7 +25,7 @@
 <!--</form>-->
 
 <div class="flex justify-center items-center h-screen p-10 ">
-    <div class="grid md:grid-cols-2 grid-cols-1  border rounded-3xl max-w-3xl ">
+    <div class="grid md:grid-cols-2 grid-cols-1  border rounded-3xl max-w-4xl ">
         <div class="flex justify-center items-center p-5">
             <form action="{% url 'login'%}" method="POST">
                 {% csrf_token %}
@@ -34,6 +34,11 @@
                        placeholder="Username" type="text">
                 <input class=" bg-gray-100 border outline-none rounded-md py-3 w-full px-4 mb-3" name="password"
                        placeholder="Password" type="text">
+
+                <a class="font-light hover:text-red-500" href="">
+                    Create Account
+                </a>
+
                 <button class=" bg-gray-900 hover:bg-gray-600 border outline-none rounded-md py-3 w-full px-4 font-semibold text-white"
                         type="submit">
                     Login
@@ -43,7 +48,7 @@
         <div class="">
             <img alt=""
                  class="rounded-3xl "
-                 src=" {% static 'bg/0b88a5b1-b148-4689-8b8c-a8919f4714c6.jpg' %}">
+                 src=" {% static 'bg/5246951.jpg' %}">
         </div>
     </div>
 </div>

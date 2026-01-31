@@ -54,6 +54,8 @@
 <div class="flex flex-wrap justify-start gap-6">
 
     {% for product in products %}
+    <form action="{% url 'AddToCart' product.id %}" method="post">
+        {% csrf_token %}
     <div class="w-72 bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
 
         <!-- IMAGE -->
@@ -101,7 +103,11 @@
                         SOLD OUT
                     </span>
                 {% else %}
-                <button
+
+
+
+
+                <button type="submit"
                         class="w-full py-2.5 bg-gray-900 text-white font-medium rounded-xl shadow-md hover:bg-black transition">
                     Add to Cart
                 </button>
@@ -114,7 +120,9 @@
             </div>
 
         </div>
+
     </div>
+    </form>
     {% endfor %}
 
 </div>

@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'products',
     'users',
     'wishlistModule',
-    'cartModule'
+    'cartModule',
+    'rest_framework',
 
 ]
 

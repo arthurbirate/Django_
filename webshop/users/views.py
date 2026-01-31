@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .models import User
 
 from users.models import Profile
@@ -9,6 +10,9 @@ from users.models import Profile
 # Create your views here.
 
 def loginPage(request):
+    if request.user.is_authenticated:
+        return redirect('landing_page')
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -23,7 +27,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            return redirect('products')
+            return redirect('landing_page')
         else:
             print("User does not exist")
 

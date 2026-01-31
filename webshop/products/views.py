@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.utils.http import escape_leading_slashes
 
 from .models import Product, Category, SubCategory
@@ -22,6 +23,7 @@ def product(request):
     return HttpResponse("Hello, this is a single product page.")
 
 
+@login_required(login_url="login")
 def manage_product(request):
     products = Product.objects.all().order_by("stock")
 
@@ -34,6 +36,7 @@ def manage_product(request):
     return render(request, "products/manage-products.html", {"products": products})
 
 
+@login_required(login_url="login")
 def create_product(request):
     form = ProductForm()
     if request.method == "POST":
@@ -47,6 +50,7 @@ def create_product(request):
     return render(request, "products/product_form.html", context)
 
 
+@login_required(login_url="login")
 def update_product(request, product_id):
     product = Product.objects.get(id=product_id)
 
@@ -60,6 +64,7 @@ def update_product(request, product_id):
     return render(request, "products/product_form.html", context)
 
 
+@login_required(login_url="login")
 def delete_product(request, product_id):
     product = Product.objects.get(id=product_id)
     context = {'product': product}
@@ -79,3 +84,7 @@ def category_products(request, category_id):
     context = {'products': products_, 'category': category_, 'subcategories': subcategories}
 
     return render(request, "products/category_products.html", context)
+
+
+def landing_page(request):
+    return render(request, "products/landingPage.html")
